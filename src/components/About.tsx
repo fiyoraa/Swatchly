@@ -115,7 +115,7 @@ export default function About({ lang }: AboutProps) {
             </h3>
             <div className="space-y-2 text-sm">
               <p className="text-[#1a1917]">
-                <span className="font-medium">{lang === 'id' ? 'GitHub:' : 'GitHub:'}</span> github.com/swatchly
+                <span className="font-medium">{lang === 'id' ? 'GitHub:' : 'GitHub:'}</span> github.com/fiyoraa/Swatchly
               </p>
               <p className="text-[#1a1917]">
                 <span className="font-medium">{lang === 'id' ? 'Dibuat oleh:' : 'Made by:'}</span> Fiyoraa

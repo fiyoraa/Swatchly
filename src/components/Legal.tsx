@@ -128,7 +128,7 @@ export default function Legal({ lang }: LegalProps) {
           </p>
           <div className="p-4 bg-[#f7f6f2] rounded-lg border border-[#e4e0d8]">
             <p className="text-[#1a1917] font-medium">
-              <strong>{lang === 'id' ? 'GitHub:' : 'GitHub:'}</strong> github.com/swatchly
+              <strong>{lang === 'id' ? 'GitHub:' : 'GitHub:'}</strong> github.com/fiyoraa/Swatchly
             </p>
           </div>
         </div>
