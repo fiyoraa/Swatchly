@@ -1,12 +1,10 @@
 import type { Language } from '../utils/i18n';
-import { translations } from '../utils/i18n';
 
 interface PrivacyProps {
   lang: Language;
 }
 
 export default function Privacy({ lang }: PrivacyProps) {
-  const t = translations[lang];
   
   return (
     <div className="space-y-8">

@@ -1,12 +1,10 @@
 import type { Language } from '../utils/i18n';
-import { translations } from '../utils/i18n';
 
 interface LegalProps {
   lang: Language;
 }
 
 export default function Legal({ lang }: LegalProps) {
-  const t = translations[lang];
   
   return (
     <div className="space-y-8">

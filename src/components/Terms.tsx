@@ -1,12 +1,10 @@
 import type { Language } from '../utils/i18n';
-import { translations } from '../utils/i18n';
 
 interface TermsProps {
   lang: Language;
 }
 
 export default function Terms({ lang }: TermsProps) {
-  const t = translations[lang];
   
   return (
     <div className="space-y-8">
