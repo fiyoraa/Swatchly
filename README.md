@@ -121,4 +121,8 @@ npm run build
 
 ## 📄 License
 
+<<<<<<< HEAD
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+=======
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+>>>>>>> 547179404fa77e6db5bb70a130d544f622d47420
