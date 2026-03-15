@@ -18,7 +18,6 @@ interface PaletteGeneratorProps {
   showToast: (message: string) => void;
 }
 
-const harmonyModes: HarmonyMode[] = ['complementary', 'analogous', 'triadic', 'split-complementary', 'tetradic'];
 const blindnessTypes: ColorBlindnessType[] = ['normal', 'deuteranopia', 'protanopia', 'tritanopia', 'achromatopsia'];
 
 export default function PaletteGenerator({
@@ -117,14 +116,65 @@ export default function PaletteGenerator({
             <select
               value={harmonyMode}
               onChange={(e) => setHarmonyMode(e.target.value as HarmonyMode)}
-              className="w-full px-3 py-2 border border-[#e4e0d8] rounded-lg text-sm focus:outline-none focus:border-[#1a1917] bg-white"
+              className="w-full px-3 py-2 border border-[#e4e0d8] rounded-lg text-sm focus:outline-none focus:border-[#1a1917]"
             >
-              {harmonyModes.map(mode => (
-                <option key={mode} value={mode}>
-                  {t.generator.modes[mode]}
-                </option>
-              ))}
+              <option value="complementary">{lang === 'id' ? 'Komplementer' : 'Complementary'}</option>
+              <option value="analogous">{lang === 'id' ? 'Analog' : 'Analogous'}</option>
+              <option value="triadic">{lang === 'id' ? 'Triadic' : 'Triadic'}</option>
+              <option value="split-complementary">{lang === 'id' ? 'Split-Komplementer' : 'Split-Complementary'}</option>
+              <option value="tetradic">{lang === 'id' ? 'Tetradic' : 'Tetradic'}</option>
             </select>
+            
+            {/* Harmony Mode Info */}
+            <div className="mt-3 p-3 bg-[#f7f6f2] rounded-lg border border-[#e4e0d8]">
+              <div className="flex items-start justify-between">
+                <div className="flex-1">
+                  <h4 className="text-sm font-semibold text-[#1a1917] mb-1">
+                    {harmonyMode === 'complementary' 
+                      ? (lang === 'id' ? 'Komplementer' : 'Complementary')
+                      : harmonyMode === 'analogous'
+                      ? (lang === 'id' ? 'Analog' : 'Analogous')
+                      : harmonyMode === 'triadic'
+                      ? (lang === 'id' ? 'Triadic' : 'Triadic')
+                      : harmonyMode === 'split-complementary'
+                      ? (lang === 'id' ? 'Split-Komplementer' : 'Split-Complementary')
+                      : (lang === 'id' ? 'Tetradic' : 'Tetradic')
+                    }
+                  </h4>
+                  <p className="text-xs text-[#6b6b6b] leading-relaxed">
+                    {harmonyMode === 'complementary' 
+                      ? (lang === 'id' 
+                          ? 'Warna yang berlawanan di roda warna. Menciptakan kontras tinggi dengan 2 warna yang berseberangan.'
+                          : 'Colors opposite on the color wheel. Creates high contrast with 2 opposite colors.')
+                      : harmonyMode === 'analogous'
+                      ? (lang === 'id'
+                          ? 'Warna yang berdekatan di roda warna. Menciptakan harmoni lembut dengan warna tetangga.'
+                          : 'Colors adjacent on the color wheel. Creates subtle harmony with neighboring colors.')
+                      : harmonyMode === 'triadic'
+                      ? (lang === 'id'
+                          ? '3 warna yang berjarak sama di roda warna. Menciptakan keseimbangan segitiga yang dinamis.'
+                          : '3 colors equally spaced on the color wheel. Creates balanced triangular harmony.')
+                      : harmonyMode === 'split-complementary'
+                      ? (lang === 'id'
+                          ? '2 warna yang berdekatan dengan komplemen. Menciptakan variasi dengan kontras moderat.'
+                          : '2 colors adjacent to complement. Creates variation with moderate contrast.')
+                      : (lang === 'id'
+                          ? '4 warna yang berjarak sama di roda warna. Menciptakan skema warna kaya dan seimbang.'
+                          : '4 colors equally spaced on the color wheel. Creates rich, balanced color schemes.')
+                    }
+                  </p>
+                </div>
+                <button
+                  onClick={() => {}}
+                  className="ml-2 p-1 text-[#6b6b6b] hover:text-[#1a1917] transition-colors"
+                  title={lang === 'id' ? 'Tutup info' : 'Close info'}
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="control-card">

@@ -4,37 +4,28 @@ A modern interactive color palette generator with manual color selection, real-t
 
 ![Swatchly](https://img.shields.io/badge/Swatchly-v1.0-blue) ![React](https://img.shields.io/badge/React-18.2+-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3.3+-cyan)
 
-## Fitur
+## Features
 
-### Fungsi
-- **Generasi Palet Warna Cerdas**: Buat palet warna menggunakan algoritma harmoni lanjutan (komplementer, analog, triadic, split-komplementer, tetradic)
-- **Ekstraksi Warna Manual**: Upload gambar dan ekstrak warna secara otomatis (K-means clustering) atau pilih warna manual dengan eyedropper tool
-- **Generasi Shade**: Buat beberapa shade dari warna dasar dengan jumlah yang bisa disesuaikan
-- **Simulasi Buta Warna**: Lihat palet melalui berbagai jenis buta warna (deuteranopia, protanopia, tritanopia, achromatopsia)
+### Core Functionality
+- **Smart Color Palette Generation**: Create color palettes using advanced harmony algorithms (complementary, analogous, triadic, split-complementary, tetradic)
+- **Manual Color Extraction**: Upload an image and extract colors automatically (K-means clustering) or pick colors manually with the eyedropper tool
+- **Shade Generation**: Generate multiple shades from a base color with a customizable count
+- **Color Blindness Simulation**: View your palette through various types of color blindness (deuteranopia, protanopia, tritanopia, achromatopsia)
 
-### Sistem Kunci Palet
-- **Penguncian Warna Individual**: Kunci warna spesifik untuk mengecualikannya dari randomisasi
-- **Indikator Visual Kunci**: Feedback visual yang jelas dengan ikon kunci dan highlight border
-- **Randomisasi Cerdas**: Hanya regenerate warna yang tidak dikunci sambil mempertahankan warna yang dikunci
+### Real-time UI Preview
+- **Live Component Preview**: See your colors in action across 4 different UI components
+- **Dynamic Color Mapping**: Colors update automatically in the navbar, cards, buttons, and form components
+- **Responsive Layout**: 2x2 grid on desktop, single column on mobile
 
-### Preview UI Real-time
-- **Preview Komponen Real-time**: Lihat warna Anda dalam aksi dengan 4 komponen UI berbeda
-- **Pemetaan Warna Dinamis**: Warna update otomatis di navbar, card, tombol, dan komponen form
-- **Layout Responsif**: Grid 2x2 di desktop, single column di mobile
+## How to Run
 
-### Ekspor & Manajemen
-- **Format Ekspor**: Salin sebagai CSS, SCSS, JSON, atau plain text
-- **Simpan Palet**: Simpan palet warna favorit kamu
+### Requirements
+- Node.js 16+
+- npm or yarn
 
-## How to run?
+### Installation
 
-### Butuh
-- Node.js 16+ 
-- npm atau yarn
-
-### Install
-
-1. **Clone repository**
+1. **Clone the repository**
 ```bash
 git clone https://github.com/fiyoraa/swatchly.git
 cd swatchly
@@ -45,119 +36,43 @@ cd swatchly
 npm install
 ```
 
-3. **Start development server**
+3. **Start the development server**
 ```bash
 npm run dev
 ```
 
-4. **Buka browser**
-Navigasi ke `http://localhost:5173`
+4. **Open your browser**
+Navigate to `http://localhost:5173`
 
-### Build untuk Produksi
+### Production Build
 
 ```bash
 npm run build
 ```
 
-File build akan ada di folder `dist/`.
+Build files will be output to the `dist/` folder.
 
-## Pake apa aja?
+## Tech Stack
 
-- **Frontend**: React 18 dengan TypeScript
+- **Frontend**: React 18 with TypeScript
 - **Build Tool**: Vite
-- **Styling**: Tailwind CSS dengan sistem desain kustom
-- **Icons**: Ikon SVG kustom (tanpa library ikon eksternal)
-- **State Management**: React hooks dan context
-- **Deployment**: Konfigurasi Netlify-ready
+- **Styling**: Tailwind CSS with a custom design system
+- **Icons**: Custom SVG icons (no external icon libraries)
+- **State Management**: React hooks and context
+- **Deployment**: Netlify-ready configuration
 
-## Struktur Proyek
+## 🔧 Configuration
 
-```
-src/
-├── components/          # Komponen React
-│   ├── PaletteGenerator.tsx    # Generator palet utama
-│   ├── ImageExtractor.tsx      # Upload gambar & ekstraksi warna
-│   ├── ComponentPreview.tsx    # Preview komponen UI
-│   ├── ContrastChecker.tsx     # Pemeriksa kontras WCAG
-│   ├── SavedPalettes.tsx       # Manajemen palet
-│   └── ExportModal.tsx         # Fungsi ekspor
-├── utils/              # Fungsi utility
-│   ├── colors.ts       # Algoritma warna dan helper
-│   └── i18n.ts         # Internasionalisasi
-├── styles/             # CSS dan design tokens
-└── types/              # Definisi tipe TypeScript
-```
-
-## Cara pakai?
-
-### 1. Generate Color Palette
-1. Masukkan warna hex dasar atau gunakan color picker
-2. Pilih mode(komplementer, analog, dll)
-3. Sesuaikan jumlah shade (3-10)
-4. Klik "Acak" untuk generate palet baru
-
-### 2. Ekstrak Warna dari Gambar
-1. Pergi ke tab Image Extractor
-2. Upload gambar (drag & drop atau klik untuk browse)
-3. Pilih antara:
-   - **Otomatis**: K-means clustering ekstrak warna dominan
-   - **Manual**: Klik langsung di gambar untuk pilih warna
-4. Klik warna yang diekstrak untuk tambahkan ke palet Anda
-
-### 3. Kunci Warna
-1. Hover di atas swatch card mana pun
-2. Klik ikon kunci (🔓) untuk kunci warna
-3. Warna yang dikunci menunjukkan ring biru dan ikon kunci yang persisten
-4. Gunakan "Acak" untuk randomisasi hanya warna yang tidak dikunci
-
-### 4. Preview di Komponen UI
-Scroll ke bawah untuk lihat warna Anda diterapkan ke:
-- **Navbar**: Header navigasi dengan logo dan tombol CTA
-- **Card**: Card produk/konten dengan tag dan aksi
-- **Tombol**: Variasi primary, secondary, accent, dan ghost
-- **Form**: Field input dan tombol submit
-
-### 5. Ekspor Palet Anda
-1. Klik "Export" untuk buka modal ekspor
-2. Pilih format favorit Anda (CSS, SCSS, JSON, dll)
-3. Salin ke clipboard atau download sebagai file
-
-## 🎨 Sistem Desain
-
-### Variabel Warna
-```css
-:root {
-  --bg-warm: #f7f6f2;      /* Background hangat */
-  --surface: #ffffff;      /* Background card */
-  --border: #e4e0d8;       /* Border halus */
-  --accent: #1a1917;       /* Aksen primer */
-  --text-primary: #1a1917; /* Teks utama */
-  --text-secondary: #6b6b6b; /* Teks samar */
-}
-```
-
-### Tipografi
-- **Headings**: DM Serif Display (serif)
-- **Body**: DM Sans (sans-serif)
-- **Code**: System monospace
-
-### Spasi
-- **Card Padding**: 28px (p-7)
-- **Swatch Height**: 110px
-- **Border Radius**: 12px (cards), 8px (inputs)
-
-## 🔧 Konfigurasi
-
-### Variabel Lingkungan
-Buat file `.env.local` untuk development lokal:
+### Environment Variables
+Create a `.env.local` file for local development:
 
 ```env
 VITE_APP_TITLE=Swatchly
-VITE_APP_DESCRIPTION=Generator Palet Warna
+VITE_APP_DESCRIPTION=Color Palette Generator
 ```
 
-### Konfigurasi Build
-Proyek ini menyertakan `netlify.toml` untuk deployment mudah ke Netlify:
+### Build Configuration
+This project includes a `netlify.toml` for deployment to Netlify:
 
 ```toml
 [build]
@@ -172,48 +87,38 @@ Proyek ini menyertakan `netlify.toml` untuk deployment mudah ke Netlify:
 
 ## 🌍 Deployment
 
-### Netlify (Direkomendasikan)
-1. Push kode Anda ke GitHub
-2. Hubungkan repository Anda ke Netlify
-3. Deploy otomatis saat push ke branch utama
+### Netlify (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Netlify
+3. Deploys automatically on every push to the main branch
 
-### Deployment Manual
+### Manual Deployment
 ```bash
-# Build proyek
+# Build the project
 npm run build
 
-# Deploy folder dist ke hosting service Anda
+# Deploy the dist folder to your hosting service
 ```
 
-## 📝 Pedoman Development
+## 🐛 Troubleshooting
 
-- **Struktur Komponen**: Pertahankan komponen kecil dan fokus
-- **TypeScript**: Gunakan typing ketat untuk semua props dan state
-- **Styling**: Gunakan kelas Tailwind dengan design token kustom
-- **Performance**: Gunakan React.memo dan useMemo untuk operasi mahal
-- **Aksesibilitas**: Tambahkan label ARIA dan navigasi keyboard yang tepat
+### Common Issues
 
-## 🐛 Pemecahan Masalah
+**Image upload not working**
+- Check the file size (10MB max recommended)
+- Make sure the file format is supported (JPG, PNG, WebP)
+- Check the browser console for errors
 
-### Masalah Umum
+**Colors not updating in preview**
+- Make sure you have at least one harmony color
+- Check that the palette array is not empty
+- Try refreshing the browser
 
-**Upload gambar tidak bekerja**
-- Periksa ukuran file (maks 10MB direkomendasikan)
-- Pastikan format file didukung (JPG, PNG, WebP)
-- Periksa console browser untuk error
+**Export not working**
+- Make sure you have a generated palette
+- Ensure the export modal has fully loaded
+- Try copying manually from the swatch cards
 
-**Warna tidak update di preview**
-- Pastikan Anda punya setidaknya satu warna harmoni
-- Periksa bahwa array palet tidak kosong
-- Coba refresh browser
+## 📄 License
 
-**Ekspor tidak bekerja**
-- Periksa bahwa Anda punya palet yang digenerate
-- Pastikan modal ekspor terload penuh
-- Coba salin manual dari swatch cards
-
-## 📄 Lisensi
-
-Proyek ini dilisensikan di bawah Lisensi MIT - lihat file [LICENSE](LICENSE) untuk detail.
-
---
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
