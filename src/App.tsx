@@ -23,7 +23,7 @@ export interface SavedPalette {
 }
 
 function App() {
-  const [lang, setLang] = useState<Language>('id');
+  const [lang, setLang] = useState<Language>('en');
   const [activeTab, setActiveTab] = useState<Tab>('generator');
   const [baseColor, setBaseColor] = useState('#6366f1');
   const [harmonyMode, setHarmonyMode] = useState<HarmonyMode>('complementary');
@@ -140,6 +140,21 @@ function App() {
                   EN
                 </button>
               </div>
+              <button
+                onClick={() => setToast({ 
+                  message: lang === 'id' 
+                    ? 'Mode: Generator (Buat palet warna harmonis dengan algoritma canggih)' 
+                    : 'Mode: Generator (Create harmonious color palettes with advanced algorithms)', 
+                  visible: true 
+                })}
+                className="w-8 h-8 rounded-lg bg-[#e4e0d8] flex items-center justify-center hover:bg-[#d4d0c4] transition-colors"
+                title={lang === 'id' ? 'Info mode' : 'Mode info'}
+              >
+                <svg className="w-4 h-4 text-[#1a1917]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v.01M12 2a9 9 0 100 18 9 9 0 00-18 0z" />
+                </svg>
+              </button>
             </div>
           </div>
 
