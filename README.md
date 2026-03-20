@@ -52,15 +52,6 @@ npm run build
 
 Build files will be output to the `dist/` folder.
 
-## Tech Stack
-
-- **Frontend**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS with a custom design system
-- **Icons**: Custom SVG icons (no external icon libraries)
-- **State Management**: React hooks and context
-- **Deployment**: Netlify-ready configuration
-
 ## 🔧 Configuration
 
 ### Environment Variables
@@ -84,22 +75,6 @@ This project includes a `netlify.toml` for deployment to Netlify:
   to = "/index.html"
   status = 200
 ```
-
-## 🌍 Deployment
-
-### Netlify (Recommended)
-1. Push your code to GitHub
-2. Connect your repository to Netlify
-3. Deploys automatically on every push to the main branch
-
-### Manual Deployment
-```bash
-# Build the project
-npm run build
-
-# Deploy the dist folder to your hosting service
-```
-
 ## 🐛 Troubleshooting
 
 ### Common Issues
@@ -121,8 +96,4 @@ npm run build
 
 ## 📄 License
 
-<<<<<<< HEAD
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-=======
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
->>>>>>> 547179404fa77e6db5bb70a130d544f622d47420
